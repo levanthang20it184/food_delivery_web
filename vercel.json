@@ -1,32 +1,30 @@
 {
     "version": 2,
+    "framework": null,
     "functions": {
-      "api/index.php": {
-        "runtime": "vercel-php@0.6.0",
-        "memory": 3008
-      }
+      "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
-    "routes": [
-      {
-        "src": "/(css|js|images|fonts)/(.*)",
-        "dest": "/public/$1/$2"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/api/index.php"
-      }
+    "routes": [{
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    },
+    {
+      "src": "/(css|js|images|fonts)/(.*)",
+      "dest": "/public/$1/$2"
+    }
+
     ],
     "env": {
       "APP_ENV": "production",
       "APP_DEBUG": "true",
-      "APP_KEY": "base64:m593HZ5YRgY30gcTbHZ9xH+YXOVnLl0GFQ80ut41kTw=",
+      "APP_KEY":"base64:m593HZ5YRgY30gcTbHZ9xH+YXOVnLl0GFQ80ut41kTw=",
       "APP_URL": "https://food-delivery-web-two.vercel.app/",
-      "DB_CONNECTION": "mysql",
-      "DB_HOST": "sql8.freesqldatabase.com",
-      "DB_PORT": "3306",
-      "DB_DATABASE": "sql8723248",
-      "DB_USERNAME": "sql8723248",
-      "DB_PASSWORD": "ZW8KQX9nva",
+      "DB_CONNECTION":"mysql",
+      "DB_HOST":"sql8.freesqldatabase.com",
+      "DB_PORT":"3306",
+      "DB_DATABASE":"sql8723248",
+      "DB_USERNAME":"sql8723248",
+      "DB_PASSWORD":"ZW8KQX9nva",
       "APP_CONFIG_CACHE": "/tmp/config.php",
       "APP_EVENTS_CACHE": "/tmp/events.php",
       "APP_PACKAGES_CACHE": "/tmp/packages.php",
