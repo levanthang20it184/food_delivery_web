@@ -15,7 +15,8 @@
         "laravel/passport": "^10.2",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "paypal/rest-api-sdk-php": "*"
+        "paypal/rest-api-sdk-php": "*",
+        "yoeunes/toastr": "^2.3"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
