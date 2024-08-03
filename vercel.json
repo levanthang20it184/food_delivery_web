@@ -4,10 +4,20 @@
     "functions": {
       "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
+    "builds": [
+        { "src": "public/**/*", "use": "@vercel/static" },
+        { "src": "resources/views/**/*.php", "use": "@vercel/php" }
+      ],
     "routes": [{
       "src": "/(.*)",
       "dest": "/api/index.php"
-    }],
+    },
+    {
+        "src": "/(.*)\\.(.+)/$",
+        "dest": "public/$1.$2"
+    }
+
+    ],
     "env": {
       "APP_ENV": "production",
       "APP_DEBUG": "true",
