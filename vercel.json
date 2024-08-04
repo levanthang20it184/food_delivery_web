@@ -16,6 +16,10 @@
             "dest": "public/$1/$2"
         },
         {
+            "src": "/(api|v1)/(.*)",
+            "dest": "routes/$1/$2"
+        },
+        {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
