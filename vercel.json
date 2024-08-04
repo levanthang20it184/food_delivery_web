@@ -13,7 +13,7 @@
     "routes": [
         {
             "src": "/(vendor|uploads|assets)/(.*)",
-            "dest": "public/$1/$2/$3"
+            "dest": "public/$1/$2"
         },
         {
             "src": "/(.*)",
