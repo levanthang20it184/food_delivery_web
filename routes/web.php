@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get(
+    '/popular',
+    [ProductController::class, 'get_recommended_products']
+)->name('hjhj.popu');
 Route::get('/', function () {
     return view('welcome');
 });

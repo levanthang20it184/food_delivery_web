@@ -1,6 +1,4 @@
 <?php
-
-use App\Http\Controllers\Api\V1\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,10 +12,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get(
-    '/popular',
-    [ProductController::class, 'get_recommended_products']
-)->name('user.store');
+
 Route::group(['namespace' => 'Api\V1'], function () {
         // http://192.168.5.105:8000/App/Http/Controllers/api/v1/products/popular
         // get product
