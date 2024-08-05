@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Api\V1\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -12,7 +14,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::get(
+    '/popular',
+    [ProductController::class, 'get_recommended_products']
+)->name('user.store');
 Route::group(['namespace' => 'Api\V1'], function () {
         // http://192.168.5.105:8000/App/Http/Controllers/api/v1/products/popular
         // get product
@@ -21,14 +26,14 @@ Route::group(['namespace' => 'Api\V1'], function () {
         Route::get('recommended', 'ProductController@get_recommended_products');
         // Route::get('drinks', 'ProductController@get_drinks');
         Route::get('test', 'ProductController@test_get_recommended_products');
-    }); 
+    });
         //registration and login
         Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
         Route::post('register', 'CustomerAuthController@register');
         Route::post('login', 'CustomerAuthController@login');
         });
-   
-        
+
+
         Route::group(['prefix' => 'customer', 'middleware' => 'auth:api'], function () {
             Route::get('notifications', 'NotificationController@get_notifications');
             Route::get('info', 'CustomerController@info');
@@ -54,7 +59,7 @@ Route::group(['namespace' => 'Api\V1'], function () {
             Route::put('payment-method', 'OrderController@update_payment_method');
         });
             });
-            
+
         Route::group(['prefix' => 'config'], function () {
         Route::get('/', 'ConfigController@configuration');
         Route::get('/get-zone-id', 'ConfigController@get_zone');
