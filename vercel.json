@@ -23,6 +23,7 @@
     "env": {
       "APP_ENV": "production",
       "APP_DEBUG": "true",
+      "ADMIN_HTTPS":"true",
       "APP_KEY":"base64:m593HZ5YRgY30gcTbHZ9xH+YXOVnLl0GFQ80ut41kTw=",
       "DB_CONNECTION":"mysql",
       "APP_URL":"https://food-delivery-web-two.vercel.app/",
