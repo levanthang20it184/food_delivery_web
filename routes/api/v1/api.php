@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'Api\V1'], function () {
-        // http://192.168.5.105:8000/App/Http/Controllers/api/v1/products/popular
+        // http://192.168.5.105:8000/apis/v1/products/popular
         // get product
         Route::group(['prefix' => 'products'], function () {
         Route::get('popular', 'ProductController@get_popular_products');
