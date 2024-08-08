@@ -90,6 +90,8 @@ class OrderController extends Controller
             insert method is part of query builder
             */
             OrderDetail::insert($order_details);
+            // add notification
+            Helpers::send_order_notification($order, $request->user()->cm_firebase_token);
 
             return response()->json([
                 'message' => trans('messages.order_placed_successfully'),
